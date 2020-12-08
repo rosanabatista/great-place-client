@@ -1,12 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Navbar.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
-const Navbar = props => {
+const Navbar = (props) => {
   return (
     <nav>
       <Link to="/" className="nav__projectName">
-        Project Name
+        greatPlace()
       </Link>
 
       <div className="nav__authLinks">
