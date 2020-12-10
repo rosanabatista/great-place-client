@@ -1,16 +1,11 @@
 import React, { Component } from "react";
-import axios from "axios";
+import { post } from "../services/api";
 
-const api = axios.create({
-  baseURL: "http://localhost:5005/api/places/uploadFile",
-});
-
-const sendFileToBackend = (file, userId) => {
+const sendFileToBackend = (file, placeId) => {
   let formBody = new window.FormData();
   formBody.append("comment-image", file);
-  const id = userId;
-  return api
-    .post(`/${id}/new-comment`, formBody)
+  const id = placeId;
+  return post(`/places/${id}/new-comment`, formBody)
     .then((response) => {
       return response.data;
     })
