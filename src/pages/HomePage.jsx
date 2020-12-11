@@ -4,7 +4,10 @@ import "../App.css";
 function HomePage() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="App-header">
+        <h1>greatPlaces</h1>
+        <p>loren</p>
+      </header>
     </div>
   );
 }

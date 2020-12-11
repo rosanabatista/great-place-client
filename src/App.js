@@ -4,13 +4,12 @@ import LoadingComponent from "./components/Loading";
 import Navbar from "./components/Navbar/Navbar";
 import HomePage from "./pages/HomePage";
 import LogIn from "./pages/LogIn";
-import ProtectedPage from "./pages/ProtectedPage";
 import Signup from "./pages/Signup";
-import FileUpload from "./pages/FileUpload";
 import NormalRoute from "./routing-components/NormalRoute";
 import ProtectedRoute from "./routing-components/ProtectedRoute";
 import { getLoggedIn, logout } from "./services/auth";
 import * as PATHS from "./utils/paths";
+import SearchPlaces from "./pages/SearchPlaces";
 
 class App extends React.Component {
   state = {
@@ -99,14 +98,8 @@ class App extends React.Component {
           />
           <ProtectedRoute
             exact
-            path={PATHS.PROTECTEDPAGE}
-            component={ProtectedPage}
-            user={this.state.user}
-          />
-          <ProtectedRoute
-            exact
-            path="/imageUpload"
-            component={FileUpload}
+            path={PATHS.SEARCHPAGE}
+            component={SearchPlaces}
             user={this.state.user}
           />
         </Switch>
