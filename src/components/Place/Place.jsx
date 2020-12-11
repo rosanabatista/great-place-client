@@ -1,12 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-export default class Place extends Component {
-  render() {
-    return (
-      <div>
-        <img />
-        <h1>place</h1>
-      </div>
-    );
-  }
-}
+const Place = (props) => {
+  const { place } = props;
+  const url = `/detail/${place.place_id}`;
+  return (
+    <div>
+      <h1>{place.name}</h1>
+      <p>{place.address}</p>
+      <Link to={url}>More details</Link>
+      <a href="#">Favorite</a>
+    </div>
+  );
+};
+
+export default Place;

@@ -10,6 +10,7 @@ import ProtectedRoute from "./routing-components/ProtectedRoute";
 import { getLoggedIn, logout } from "./services/auth";
 import * as PATHS from "./utils/paths";
 import SearchPlaces from "./pages/SearchPlaces";
+import DetailPage from "./pages/DetailPage";
 
 class App extends React.Component {
   state = {
@@ -100,6 +101,12 @@ class App extends React.Component {
             exact
             path={PATHS.SEARCHPAGE}
             component={SearchPlaces}
+            user={this.state.user}
+          />
+          <ProtectedRoute
+            exact
+            path={PATHS.DETAILPAGE}
+            component={DetailPage}
             user={this.state.user}
           />
         </Switch>
