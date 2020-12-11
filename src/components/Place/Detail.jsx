@@ -11,6 +11,7 @@ const Detail = (props) => {
       <p>{place.phone}</p>
       <p>{place.website}</p>
       <Infos info={place.infos} />
+      <h3>Comments</h3>
       {place.comments.map((comment) => {
         return <Comment comment={comment} />;
       })}
