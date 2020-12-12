@@ -7,6 +7,7 @@ const Place = (props) => {
   return (
     <div>
       <h1>{place.name}</h1>
+      <img src={place.icon} />
       <p>{place.address}</p>
       <Link to={url}>More details</Link>
       <a href="#">Favorite</a>

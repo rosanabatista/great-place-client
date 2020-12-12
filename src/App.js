@@ -11,6 +11,7 @@ import { getLoggedIn, logout } from "./services/auth";
 import * as PATHS from "./utils/paths";
 import SearchPlaces from "./pages/SearchPlaces";
 import DetailPage from "./pages/DetailPage";
+import Favorites from "./pages/Favorites";
 
 class App extends React.Component {
   state = {
@@ -107,6 +108,12 @@ class App extends React.Component {
             exact
             path={PATHS.DETAILPAGE}
             component={DetailPage}
+            user={this.state.user}
+          />
+          <ProtectedRoute
+            exact
+            path={PATHS.FAVORITESPAGE}
+            component={Favorites}
             user={this.state.user}
           />
         </Switch>

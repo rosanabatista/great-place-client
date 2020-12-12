@@ -8,7 +8,7 @@ export default class SearchPlaces extends Component {
   state = {
     places: [
       {
-        place_id: "cjbuiewu",
+        place_id: "ChIJ9-1rhi0IxkcRfYG8lHchNI0",
         name: "BAK restaurant",
         opening_hours: {
           open_now: true,
