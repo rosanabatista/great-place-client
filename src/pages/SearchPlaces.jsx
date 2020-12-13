@@ -3,7 +3,7 @@ import Checkboxes from "../components/Filters/Checkboxes";
 import Filters from "../components/Filters/Filters";
 import Place from "../components/Place/Place";
 import Searchbar from "../components/Searchbar/Searchbar";
-import { get } from "../services/api";
+import { get, post } from "../services/api";
 
 export default class SearchPlaces extends Component {
   state = {
@@ -69,6 +69,12 @@ export default class SearchPlaces extends Component {
     }
   };
 
+  handleFavoriteClick = (event) => {
+    event.preventDefault();
+    console.log(event.target.dataset.id);
+    post(`/favorites/${event.target.dataset.id}`);
+  };
+
   render() {
     return (
       <div>
@@ -85,7 +91,12 @@ export default class SearchPlaces extends Component {
           />
         </form>
         {this.state.places.map((place) => {
-          return <Place place={place} />;
+          return (
+            <Place
+              place={place}
+              handleFavoriteClick={this.handleFavoriteClick}
+            />
+          );
         })}
       </div>
     );
