@@ -2,11 +2,15 @@ import React from "react";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 import Infos from "./Infos";
+import { Link } from "react-router-dom";
 
 const Detail = (props) => {
   const { place } = props;
+  const url = `/edit/${place.place_id}`;
+
   return (
     <div>
+      <Link to={url}>Add infos</Link>
       <h1>{place.name}</h1>
       <img src={place.icon} />
       <p>{place.address}</p>
