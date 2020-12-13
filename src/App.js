@@ -12,6 +12,7 @@ import * as PATHS from "./utils/paths";
 import SearchPlaces from "./pages/SearchPlaces";
 import DetailPage from "./pages/DetailPage";
 import Favorites from "./pages/Favorites";
+import EditPlace from "./pages/EditPlace";
 
 class App extends React.Component {
   state = {
@@ -114,6 +115,12 @@ class App extends React.Component {
             exact
             path={PATHS.FAVORITESPAGE}
             component={Favorites}
+            user={this.state.user}
+          />
+          <ProtectedRoute
+            exact
+            path={PATHS.EDITPAGE}
+            component={EditPlace}
             user={this.state.user}
           />
         </Switch>

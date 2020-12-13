@@ -1,7 +1,6 @@
 import React from "react";
 
 const Checkbox = ({ label, isSelected, onCheckboxChange, state }) => {
-  console.log(state);
   return (
     <div className="form-check">
       <label>

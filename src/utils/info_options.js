@@ -1,0 +1,25 @@
+const info_options = [
+  { name: "wheelchair_accessible", label: "Wheelchair accessible" },
+  { name: "wheelchair_bathroom", label: "Wheelchair accessible bathroom" },
+  { name: "wheelchair_table", label: "The table height fits to wheelchairs" },
+  { name: "braille_menu", label: "Braille menus" },
+  { name: "braille_signs", label: "Signs with Braille or tactile features" },
+  { name: "large_menu", label: "Large type menu" },
+  { name: "lights", label: "The lights are comfortable" },
+  { name: "comfortable_colors", label: "The walls have comfortable colors" },
+  { name: "noises", label: "There are no disturbing noises" },
+  { name: "working_lift", label: "Working lift" },
+  { name: "sign_language", label: "Staff who knows sign language" },
+  { name: "open_area", label: "Open area" },
+  { name: "changing_ladies", label: "Changing table on ladies bathroom" },
+  { name: "changing_mens", label: "Changing table on mens bathroom" },
+  { name: "high_chair", label: "High chair for children" },
+  { name: "kids_menu", label: "Kid’s menu" },
+  { name: "play_area", label: "Play area" },
+  { name: "phone_charger", label: "Phone charger available" },
+  { name: "parking", label: "Parking" },
+  { name: "strollers", label: "Space for strollers near the table" },
+  { name: "breastfeeding", label: "Breastfeeding friendly" },
+];
+
+export default info_options;

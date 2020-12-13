@@ -1,4 +1,5 @@
 import React from "react";
+import info_options from "../../utils/info_options";
 
 const Infos = (props) => {
   const info = props.info;
@@ -6,7 +7,8 @@ const Infos = (props) => {
   return (
     <div>
       {available.map((key) => {
-        return <div key={key}>{key}</div>;
+        const option = info_options.filter((item) => item.name === key);
+        return <div key={key}>{option[0].label}</div>;
       })}
     </div>
   );
