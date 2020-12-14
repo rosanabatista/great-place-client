@@ -16,6 +16,9 @@ const Navbar = (props) => {
             <Link to={PATHS.SEARCHPAGE} className="search">
               Search
             </Link>
+            <Link to={PATHS.FAVORITESPAGE} className="favorites">
+              Favorites
+            </Link>
             <button className="nav-logoutbtn" onClick={props.handleLogout}>
               Logout
             </button>

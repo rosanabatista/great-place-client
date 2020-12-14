@@ -11,6 +11,9 @@ const Detail = (props) => {
   return (
     <div>
       <Link to={url}>Add infos</Link>
+      <a href="#" onClick={props.handleFavoriteClick} data-id={place.place_id}>
+        Favorite
+      </a>
       <h1>{place.name}</h1>
       <img src={place.icon} />
       <p>{place.address}</p>

@@ -54,6 +54,12 @@ export default class DetailPage extends Component {
     });
   };
 
+  handleFavoriteClick = (event) => {
+    event.preventDefault();
+    console.log(event.target.dataset.id);
+    post(`/favorites/${event.target.dataset.id}`);
+  };
+
   render() {
     const newComment = { body: this.state.body, picture: this.state.picture };
     return (
@@ -64,6 +70,7 @@ export default class DetailPage extends Component {
           handleCommentSubmit={this.handleCommentSubmit}
           handleCommentChange={this.handleCommentChange}
           handleCommentFileChange={this.handleCommentFileChange}
+          handleFavoriteClick={this.handleFavoriteClick}
         />
       </div>
     );

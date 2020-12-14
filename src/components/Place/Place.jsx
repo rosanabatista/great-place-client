@@ -9,6 +9,7 @@ const Place = (props) => {
       <h1>{place.name}</h1>
       <img src={place.icon} />
       <p>{place.address}</p>
+      <p>{place.vicinity}</p>
       <Link to={url}>More details</Link>
       <a href="#" onClick={props.handleFavoriteClick} data-id={place.place_id}>
         Favorite
