@@ -83,7 +83,7 @@ class App extends React.Component {
     }
 
     return (
-      <div className="App">
+      <div className="App container">
         <Navbar handleLogout={this.handleLogout} user={this.state.user} />
         <Switch>
           <NormalRoute exact path={PATHS.HOMEPAGE} component={HomePage} />
