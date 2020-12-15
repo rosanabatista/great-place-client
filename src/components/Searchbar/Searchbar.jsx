@@ -1,7 +1,13 @@
 import React from "react";
 import "./Searchbar.css";
+import Checkboxes from "../Filters/Checkboxes";
 
-const Searchbar = ({ query, handleChange }) => {
+const Searchbar = ({
+  query,
+  handleInputChange,
+  infos,
+  handleCheckboxChange,
+}) => {
   return (
     <div className="input-group mb-4 ">
       <input
@@ -10,7 +16,7 @@ const Searchbar = ({ query, handleChange }) => {
         aria-describedby="button-addon5"
         className="form-control"
         value={query}
-        onChange={handleChange}
+        onChange={handleInputChange}
       />
       <div className="input-group-append">
         <button id="button-addon5" type="submit" className="btn search-button">

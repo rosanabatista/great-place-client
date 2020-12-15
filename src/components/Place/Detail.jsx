@@ -22,9 +22,9 @@ const Detail = (props) => {
           Favorite
         </a>
       </div>
-      <div>
-        <h1>{place.name}</h1>
+      <div className="container-fluid">
         <img src={place.icon} />
+        <h1>{place.name}</h1>
         <p>{place.address}</p>
         <p>{place.phone}</p>
         <p>{place.website}</p>

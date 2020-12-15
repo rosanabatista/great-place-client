@@ -41,7 +41,7 @@ function HomePage() {
             </div>
             <div className="col-sm-4 web-box text-center mt-3 mb-3">
               <span>
-                <i className="icon-home fas fa-chevron-circle-right"></i>
+                <i className="icon-home fas fa-map-marker-alt"></i>
               </span>
               <h3>Go</h3>
               <p>Now you know that in this place you will be comfortable.</p>

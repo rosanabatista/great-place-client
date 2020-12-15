@@ -14,10 +14,11 @@ export default class Favorites extends Component {
   };
   handleFavoriteClick = (event) => {
     event.preventDefault();
-    post(`/favorites/${event.target.dataset.id}`).then((result) => {
+    const id = event.target.closest("a").dataset.id;
+    post(`/favorites/${id}`).then((result) => {
       const favorites = this.state.places;
       const newFavorites = favorites.filter(
-        (favorite) => favorite.place_id !== event.target.dataset.id
+        (favorite) => favorite.place_id !== id
       );
       this.setState({ places: newFavorites });
     });

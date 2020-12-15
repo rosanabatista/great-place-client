@@ -4,6 +4,7 @@ import Filters from "../components/Filters/Filters";
 import Place from "../components/Place/Place";
 import Searchbar from "../components/Searchbar/Searchbar";
 import { get, post } from "../services/api";
+import "../App.css";
 
 export default class SearchPlaces extends Component {
   state = {
@@ -13,6 +14,7 @@ export default class SearchPlaces extends Component {
     lng: null,
     infos: {},
   };
+
   componentDidMount = () => {
     if ("geolocation" in navigator) {
       console.log("geo is available");
@@ -71,45 +73,55 @@ export default class SearchPlaces extends Component {
 
   handleFavoriteClick = (event) => {
     event.preventDefault();
-    console.log(event.target.dataset.id);
-    post(`/favorites/${event.target.dataset.id}`);
+    const clickedItem = event.target.closest("a");
+    post(`/favorites/${clickedItem.dataset.id}`).then((result) => {
+      const places = this.state.places;
+      const newFavorites = places.map((place) => {
+        if (place.place_id === clickedItem.dataset.id) {
+          place.isFavorite = !place.isFavorite;
+        }
+        return place;
+      });
+      this.setState({ places: newFavorites });
+    });
   };
 
   render() {
     return (
-      <div className="container-fluid">
-        <div className="row">
-          <form
-            onSubmit={this.handleFormSubmit}
-            className="col-lg-6 col-sm-12 offset-lg-3"
-          >
-            <Searchbar
-              handleChange={this.handleSearchbarChange}
-              query={this.state.query}
-            />
-          </form>
-        </div>
-        <div className="row">
-          <div className="col-lg-4">
-            <form onSubmit={this.handleFormSubmit}>
-              <Checkboxes
+      <div className="search-page">
+        <div className="container-fluid">
+          <div className="row align-items-center h-100">
+            <form
+              onSubmit={this.handleFormSubmit}
+              className="col-lg-6 col-sm-12 offset-lg-3"
+            >
+              <Searchbar
+                handleInputChange={this.handleSearchbarChange}
+                query={this.state.query}
                 infos={this.state.infos}
-                handleChange={this.handleCheckboxChange}
+                handleCheckboxChange={this.handleCheckboxChange}
               />
-              <button type="submit" className="button button__submit">
-                Search
-              </button>
             </form>
           </div>
-          <div className="col-lg-8">
-            {this.state.places.map((place) => {
-              return (
-                <Place
-                  place={place}
-                  handleFavoriteClick={this.handleFavoriteClick}
+          <div className="row">
+            <div className="col-lg-3">
+              <form onSubmit={this.handleFormSubmit}>
+                <Checkboxes
+                  infos={this.state.infos}
+                  handleChange={this.handleCheckboxChange}
                 />
-              );
-            })}
+              </form>
+            </div>
+            <div className="col-lg-9">
+              {this.state.places.map((place) => {
+                return (
+                  <Place
+                    place={place}
+                    handleFavoriteClick={this.handleFavoriteClick}
+                  />
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
