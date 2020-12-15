@@ -2,7 +2,10 @@
 #EEF5FA
 #457B9D
 #1D3557 */
-
+.button:hover {
+  background-color: #1d3557;
+}
+/* HOMEPAGE */
 body {
   background-color: #eef5fa;
   font-size: 16px;
@@ -11,6 +14,39 @@ body {
   box-sizing: border-box;
 }
 
-.mainLogo {
+.icon-home {
+  border: 5px solid #457b9d;
+  font-size: 20px;
+  border-radius: 35px;
+  width: 70px;
+  height: 70px;
   text-align: center;
+  align-items: center;
+  line-height: 65px;
+  color: #1d3557;
+}
+
+.web-box h3 {
+  font-weight: bold;
+  margin: 20px 0 10px 0;
+}
+.web-box p {
+  margin: 0 0 10px;
+  padding: 0 50px;
+}
+
+/* AUTH */
+.button__submit {
+  font-family: inherit;
+  font-weight: inherit;
+  padding: 0.5em 1em;
+  background-color: #457b9d;
+  box-shadow: 0 0 5px 0 aliceblue;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  color: #e3f2ff;
+  transition: all 0.2s ease-in-out;
+  position: sticky;
+  top: 0;
 }

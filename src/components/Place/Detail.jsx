@@ -10,26 +10,40 @@ const Detail = (props) => {
 
   return (
     <div>
-      <Link to={url}>Add infos</Link>
-      <a href="#" onClick={props.handleFavoriteClick} data-id={place.place_id}>
-        Favorite
-      </a>
-      <h1>{place.name}</h1>
-      <img src={place.icon} />
-      <p>{place.address}</p>
-      <p>{place.phone}</p>
-      <p>{place.website}</p>
-      <Infos info={place.infos} />
-      <h3>Comments</h3>
-      <CommentForm
-        newComment={props.newComment}
-        handleSubmit={props.handleCommentSubmit}
-        handleBodyChange={props.handleCommentChange}
-        handleFileChange={props.handleCommentFileChange}
-      />
-      {place.comments.map((comment) => {
-        return <Comment key={comment._id} comment={comment} />;
-      })}
+      <div>
+        <Link to={url}>Add infos</Link>
+      </div>
+      <div>
+        <a
+          href="#"
+          onClick={props.handleFavoriteClick}
+          data-id={place.place_id}
+        >
+          Favorite
+        </a>
+      </div>
+      <div>
+        <h1>{place.name}</h1>
+        <img src={place.icon} />
+        <p>{place.address}</p>
+        <p>{place.phone}</p>
+        <p>{place.website}</p>
+      </div>
+      <div>
+        <Infos info={place.infos} />
+      </div>
+      <div>
+        <h3>Comments</h3>
+        <CommentForm
+          newComment={props.newComment}
+          handleSubmit={props.handleCommentSubmit}
+          handleBodyChange={props.handleCommentChange}
+          handleFileChange={props.handleCommentFileChange}
+        />
+        {place.comments.map((comment) => {
+          return <Comment key={comment._id} comment={comment} />;
+        })}
+      </div>
     </div>
   );
 };

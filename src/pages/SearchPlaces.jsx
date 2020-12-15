@@ -77,27 +77,41 @@ export default class SearchPlaces extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleFormSubmit}>
-          <Searchbar
-            handleChange={this.handleSearchbarChange}
-            query={this.state.query}
-          />
-        </form>
-        <form onSubmit={this.handleFormSubmit}>
-          <Checkboxes
-            infos={this.state.infos}
-            handleChange={this.handleCheckboxChange}
-          />
-        </form>
-        {this.state.places.map((place) => {
-          return (
-            <Place
-              place={place}
-              handleFavoriteClick={this.handleFavoriteClick}
+      <div className="container-fluid">
+        <div className="row">
+          <form
+            onSubmit={this.handleFormSubmit}
+            className="col-lg-6 col-sm-12 offset-lg-3"
+          >
+            <Searchbar
+              handleChange={this.handleSearchbarChange}
+              query={this.state.query}
             />
-          );
-        })}
+          </form>
+        </div>
+        <div className="row">
+          <div className="col-lg-4">
+            <form onSubmit={this.handleFormSubmit}>
+              <Checkboxes
+                infos={this.state.infos}
+                handleChange={this.handleCheckboxChange}
+              />
+              <button type="submit" className="button button__submit">
+                Search
+              </button>
+            </form>
+          </div>
+          <div className="col-lg-8">
+            {this.state.places.map((place) => {
+              return (
+                <Place
+                  place={place}
+                  handleFavoriteClick={this.handleFavoriteClick}
+                />
+              );
+            })}
+          </div>
+        </div>
       </div>
     );
   }

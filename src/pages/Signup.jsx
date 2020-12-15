@@ -37,30 +37,49 @@ export default class Signup extends Component {
   render() {
     return (
       <div>
-        <h1>Sign Up</h1>
+        <h2 className="text-center">Sign Up</h2>
         <form onSubmit={this.handleFormSubmission} className="auth__form">
-          <label htmlFor="input-username">Username</label>
-          <input
-            id="input-username"
-            type="text"
-            name="username"
-            placeholder="Text"
-            value={this.state.username}
-            onChange={this.handleInputChange}
-            required
-          />
-
-          <label htmlFor="input-password">Password</label>
-          <input
-            id="input-password"
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={this.state.password}
-            onChange={this.handleInputChange}
-            required
-            minLength="8"
-          />
+          <div className="row g-3 align-items-center mb-3">
+            <div className="col-auto">
+              <label htmlFor="input-username" className="col-form-label">
+                Username
+              </label>
+            </div>
+            <input
+              id="input-username"
+              type="text"
+              name="username"
+              placeholder="Type your username here"
+              value={this.state.username}
+              onChange={this.handleInputChange}
+              required
+              className="form-control mt-0"
+            />
+          </div>
+          <div className="row g-3 align-items-center">
+            <div className="col-auto">
+              <label htmlFor="input-password" className="col-form-label">
+                Password
+              </label>
+            </div>
+            <input
+              id="input-password"
+              type="password"
+              name="password"
+              placeholder="Type your password here"
+              value={this.state.password}
+              onChange={this.handleInputChange}
+              required
+              minLength="8"
+              className="form-control mt-0"
+              aria-describedby="passwordHelpInline"
+            />
+            <div className="col-auto mt-0">
+              <span id="passwordHelpInline" className="form-text">
+                Must be at least 8 characters long.
+              </span>
+            </div>
+          </div>
 
           {this.state.error && (
             <div className="error-block">
@@ -69,7 +88,7 @@ export default class Signup extends Component {
             </div>
           )}
 
-          <button className="button__submit" type="submit">
+          <button className="button__submit button" type="submit">
             Submit
           </button>
         </form>
