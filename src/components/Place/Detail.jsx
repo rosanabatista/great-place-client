@@ -15,7 +15,6 @@ const Detail = (props) => {
         <div className="row mb-5 text-center">
           <div className="col-12">
             <img src={place.picture} alt={place.name} />
-            <img src={imgURL} alt={place.name} />
 
             <h2>{place.name}</h2>
             <div className="col-12 pt-1">
