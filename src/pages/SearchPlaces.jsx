@@ -89,11 +89,11 @@ export default class SearchPlaces extends Component {
   render() {
     return (
       <div className="search-page">
-        <div className="container-fluid">
+        <div className="container">
           <div className="row align-items-center h-100">
             <form
               onSubmit={this.handleFormSubmit}
-              className="col-lg-6 col-sm-12 offset-lg-3"
+              className="col-lg-12 col-sm-12"
             >
               <Searchbar
                 handleInputChange={this.handleSearchbarChange}
@@ -114,7 +114,7 @@ export default class SearchPlaces extends Component {
                 <button className="button__submit">Search</button>
               </form>
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-9">
               {this.state.places.map((place) => {
                 return (
                   <Place

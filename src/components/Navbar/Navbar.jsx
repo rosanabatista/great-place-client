@@ -7,7 +7,7 @@ import logo from "../../logo.svg";
 const Navbar = (props) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
-      <div className="container-fluid">
+      <div className="container">
         <Link to="/" className="navbar-brand">
           <img src={logo} alt="logo" width="50" height="50" />
         </Link>
@@ -25,7 +25,7 @@ const Navbar = (props) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           {props.user ? (
             <ul className="navbar-nav justify-content-end">
-              <li className="nav-item me-3">
+              <li className="nav-item ms-3">
                 <Link
                   to={PATHS.SEARCHPAGE}
                   className="search authLink nav-link"
@@ -33,7 +33,7 @@ const Navbar = (props) => {
                   Search
                 </Link>
               </li>
-              <li className="nav-item me-3">
+              <li className="nav-item ms-3">
                 <Link
                   to={PATHS.FAVORITESPAGE}
                   className="favorites authLink nav-link"
@@ -41,7 +41,7 @@ const Navbar = (props) => {
                   Favorites
                 </Link>
               </li>
-              <li className="nav-item me-3">
+              <li className="nav-item ms-3">
                 <button className="nav-logoutbtn" onClick={props.handleLogout}>
                   Logout
                 </button>
@@ -49,12 +49,12 @@ const Navbar = (props) => {
             </ul>
           ) : (
             <ul className="navbar-nav">
-              <li className="nav-item me-3">
+              <li className="nav-item ms-3">
                 <Link to={PATHS.SIGNUPPAGE} className="authLink nav-link">
                   Signup
                 </Link>
               </li>
-              <li className="nav-item me-3">
+              <li className="nav-item ms-3">
                 <Link to={PATHS.LOGINPAGE} className="authLink nav-link">
                   Log In
                 </Link>
