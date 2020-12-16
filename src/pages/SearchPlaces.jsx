@@ -114,7 +114,7 @@ export default class SearchPlaces extends Component {
                 <button className="button__submit">Search</button>
               </form>
             </div>
-            <div className="col-lg-9">
+            <div className="col-lg-8">
               {this.state.places.map((place) => {
                 return (
                   <Place

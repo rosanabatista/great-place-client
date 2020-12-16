@@ -14,6 +14,7 @@ const Detail = (props) => {
       <section>
         <div className="row mb-5 text-center">
           <div className="col-12">
+            <img src={place.picture} />
             <h2>{place.name}</h2>
             <div className="col-12 pt-1">
               <p>{place.address}</p>
@@ -21,7 +22,7 @@ const Detail = (props) => {
               <p>{place.website}</p>
             </div>
             <Link to={url} className="heart p-2">
-              <i className="fas fa-plus"></i>
+              <p className="">Add info</p>
             </Link>
             <a
               href="#"

@@ -9,6 +9,7 @@ const Place = (props) => {
   return (
     <div className="row mb-5">
       <div className="text-center place-click">
+        <img src={place.picture} />
         <h3>
           <Link to={url} className="text-decoration-none place">
             {place.name}
