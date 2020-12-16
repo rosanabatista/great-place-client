@@ -14,6 +14,10 @@ body {
   box-sizing: border-box;
 }
 
+.container {
+  max-width: 1100px !important;
+}
+
 .icon-home {
   border: 5px solid #457b9d;
   font-size: 20px;
@@ -52,6 +56,19 @@ body {
 }
 
 /* SEARCH */
+.sidebar {
+  background-color: #457b9d;
+  color: #eef5fa;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.place-click {
+  border-bottom: 1px solid #1d3557;
+  border-radius: 5px;
+  padding: 20px;
+  margin-left: 5px;
+}
 /* .search-page {
   width: 100vw;
   height: 100vh;
@@ -80,3 +97,82 @@ body {
 .search-page form {
   z-index: 10;
 } */
+
+/* DETAIL */
+.add-button p {
+  text-decoration: none;
+  color: #e3f2ff;
+}
+
+.fa-plus {
+  color: #457b9d;
+}
+
+.fa-heart {
+  color: red;
+}
+
+.fa-breastfeeding {
+  background-image: url("./breastfeeding.svg");
+  background-size: cover;
+  width: 1rem;
+  height: 1rem;
+}
+
+.fa-elevator {
+  background-image: url("./elevator.svg");
+  background-size: cover;
+  width: 1rem;
+  height: 1rem;
+}
+.fa-wall {
+  background-image: url("./wall.svg");
+  background-size: cover;
+  width: 1rem;
+  height: 1rem;
+}
+.fa-playarea {
+  background-image: url("./playarea.svg");
+  background-size: cover;
+  width: 1rem;
+  height: 1rem;
+}
+.fa-kidmenu {
+  background-image: url("./kidmenu.svg");
+  background-size: cover;
+  width: 1rem;
+  height: 1rem;
+}
+.fa-wheelbath {
+  background-image: url("./wheelbath.svg");
+  background-size: cover;
+  width: 1rem;
+  height: 1rem;
+}
+.list li {
+  background-color: #eef5fa;
+  border: none;
+}
+
+.place {
+  color: #1d3557;
+}
+
+.heart {
+  font-size: 1.2rem;
+}
+
+.infos-section {
+  background-color: #457b9d;
+  color: #e3f2ff;
+  padding: 20px;
+  border-radius: 1rem;
+}
+
+.comment-section,
+.checkboxes {
+  border: 1px solid #1d3557;
+  padding: 20px;
+  border-radius: 1rem;
+  margin-top: 10px;
+}

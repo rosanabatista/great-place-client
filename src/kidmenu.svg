@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 512 640" x="0px" y="0px" fill="#eef5fa">
+    <title>Food</title>
+    <path d="M163.5,139.874c22.115,0,42.59-10.023,52.163-25.4A7.166,7.166,0,0,1,221.609,111H391.017a14.5,14.5,0,1,0,0-29H221.609a7.1,7.1,0,0,1-5.943-3.41c-9.585-15.4-30.06-25.459-52.163-25.459-31.6,0-57.3,19.411-57.3,43.323C106.2,120.419,131.907,139.874,163.5,139.874Z"/>
+    <path d="M43,335.717C43,403.624,98.625,459,166.532,459H345.469C413.375,459,469,403.624,469,335.717V296H43Z"/>
+    <rect x="43" y="231" width="426" height="51"/>
+    <text x="0" y="527" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">Created by Kiran Shastry</text>
+    <text x="0" y="532" fill="#000000" font-size="5px" font-weight="bold" font-family="'Helvetica Neue', Helvetica, Arial-Unicode, Arial, Sans-serif">from the Noun Project</text>
+</svg>

@@ -104,15 +104,17 @@ export default class SearchPlaces extends Component {
             </form>
           </div>
           <div className="row">
-            <div className="col-lg-3">
+            <h4>Select the filters:</h4>
+            <div className="col-lg-3 sidebar">
               <form onSubmit={this.handleFormSubmit}>
                 <Checkboxes
                   infos={this.state.infos}
                   handleChange={this.handleCheckboxChange}
                 />
+                <button className="button__submit">Search</button>
               </form>
             </div>
-            <div className="col-lg-9">
+            <div className="col-lg-6">
               {this.state.places.map((place) => {
                 return (
                   <Place

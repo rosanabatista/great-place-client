@@ -41,13 +41,18 @@ export default class EditPlace extends Component {
   render() {
     return (
       <div>
-        <h3 className="text-center">
-          Click on the checkboxes to change infos about {this.state.place.name}
-        </h3>
+        <div>
+          <h3 className="text-center">
+            Click on the checkboxes to change infos about{" "}
+            {this.state.place.name}
+          </h3>
+        </div>
         <form onSubmit={this.handleFormSubmit} className="container">
           <Checkboxes
             infos={this.state.infos}
             handleChange={this.handleCheckboxChange}
+            containerClasses="row mb-3 mt-5 checkboxes"
+            itemClasses="col-4 mb-2"
           />
           <div className="text-center mt-2">
             <button type="submit" className="button button__submit">

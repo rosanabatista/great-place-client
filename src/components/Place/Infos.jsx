@@ -5,10 +5,15 @@ const Infos = (props) => {
   const info = props.info;
   const available = Object.keys(info).filter((key) => info[key] === true);
   return (
-    <div>
+    <div className="row">
       {available.map((key) => {
         const option = info_options.filter((item) => item.name === key);
-        return <div key={key}>{option[0].label}</div>;
+        return (
+          <div className="col-4 mt-2 mb-2" key={key}>
+            <i className={option[0].icon}></i>
+            <span className="ms-2">{option[0].label}</span>
+          </div>
+        );
       })}
     </div>
   );

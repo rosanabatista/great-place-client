@@ -7,24 +7,22 @@ const Place = (props) => {
   const url = `/detail/${place.place_id}`;
   const favIcon = place.isFavorite ? "fas fa-heart" : "far fa-heart";
   return (
-    <div className="row mb-5 position-relative">
-      <div className="col-1">
-        <img src={place.icon} />
-      </div>
-      <div className="col-11 ">
+    <div className="row mb-5">
+      <div className="text-center place-click">
+        <h3>
+          <Link to={url} className="text-decoration-none place">
+            {place.name}
+          </Link>
+        </h3>
+        <p>{place.address}</p>
+        <p>{place.vicinity}</p>
         <a
           href="#"
           onClick={props.handleFavoriteClick}
           data-id={place.place_id}
-          className="position-absolute top-0 end-0 me-5 pe-5"
         >
           <i className={favIcon}></i>
         </a>
-        <h1>
-          <Link to={url}> {place.name}</Link>
-        </h1>
-        <p>{place.address}</p>
-        <p>{place.vicinity}</p>
       </div>
     </div>
   );

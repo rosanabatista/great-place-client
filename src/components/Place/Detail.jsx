@@ -7,43 +7,59 @@ import { Link } from "react-router-dom";
 const Detail = (props) => {
   const { place } = props;
   const url = `/edit/${place.place_id}`;
+  const favIcon = place.isFavorite ? "fas fa-heart" : "far fa-heart";
 
   return (
-    <div>
-      <div>
-        <Link to={url}>Add infos</Link>
-      </div>
-      <div>
-        <a
-          href="#"
-          onClick={props.handleFavoriteClick}
-          data-id={place.place_id}
-        >
-          Favorite
-        </a>
-      </div>
-      <div className="container-fluid">
-        <img src={place.icon} />
-        <h1>{place.name}</h1>
-        <p>{place.address}</p>
-        <p>{place.phone}</p>
-        <p>{place.website}</p>
-      </div>
-      <div>
-        <Infos info={place.infos} />
-      </div>
-      <div>
-        <h3>Comments</h3>
-        <CommentForm
-          newComment={props.newComment}
-          handleSubmit={props.handleCommentSubmit}
-          handleBodyChange={props.handleCommentChange}
-          handleFileChange={props.handleCommentFileChange}
-        />
-        {place.comments.map((comment) => {
-          return <Comment key={comment._id} comment={comment} />;
-        })}
-      </div>
+    <div className="container">
+      <section>
+        <div className="row mb-5 text-center">
+          <div className="col-12">
+            <h2>{place.name}</h2>
+            <div className="col-12 pt-1">
+              <p>{place.address}</p>
+              <p>{place.phone}</p>
+              <p>{place.website}</p>
+            </div>
+            <Link to={url} className="heart p-2">
+              <i className="fas fa-plus"></i>
+            </Link>
+            <a
+              href="#"
+              onClick={props.handleFavoriteClick}
+              data-id={place.place_id}
+              className="heart p-2"
+            >
+              <i className={favIcon}></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="infos-section">
+        <div className="row mb-3 ">
+          <div className="col-12 text-center mb-2">
+            <h4>Here you can find:</h4>
+          </div>
+          <Infos info={place.infos} />
+        </div>
+      </section>
+
+      <section className="comment-section">
+        <div className="row mt-5">
+          <div className="col-12">
+            <h4>Comments</h4>
+          </div>
+          <CommentForm
+            newComment={props.newComment}
+            handleSubmit={props.handleCommentSubmit}
+            handleBodyChange={props.handleCommentChange}
+            handleFileChange={props.handleCommentFileChange}
+          />
+          {place.comments.map((comment) => {
+            return <Comment key={comment._id} comment={comment} />;
+          })}
+        </div>
+      </section>
     </div>
   );
 };

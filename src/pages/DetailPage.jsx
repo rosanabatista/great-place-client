@@ -57,7 +57,13 @@ export default class DetailPage extends Component {
   handleFavoriteClick = (event) => {
     event.preventDefault();
     console.log(event.target.dataset.id);
-    post(`/favorites/${event.target.dataset.id}`);
+    post(`/favorites/${event.target.closest("a").dataset.id}`).then(
+      (result) => {
+        const place = this.state.place;
+        place.isFavorite = !place.isFavorite;
+        this.setState({ place: place });
+      }
+    );
   };
 
   render() {
