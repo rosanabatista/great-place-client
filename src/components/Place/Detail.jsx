@@ -8,21 +8,32 @@ const Detail = (props) => {
   const { place } = props;
   const url = `/edit/${place.place_id}`;
   const favIcon = place.isFavorite ? "fas fa-heart" : "far fa-heart";
-
+  const imgURL = `${process.env.REACT_APP_SERVER_URL}/places/photos/${place.photo}`;
   return (
     <div className="container">
       <section>
         <div className="row mb-5 text-center">
           <div className="col-12">
-            <img src={place.picture} />
+            <img src={place.picture} alt={place.name} />
+            <img src={imgURL} alt={place.name} />
+
             <h2>{place.name}</h2>
             <div className="col-12 pt-1">
               <p>{place.address}</p>
               <p>{place.phone}</p>
-              <p>{place.website}</p>
+              <p>
+                Go to website:{" "}
+                <a
+                  className="text-decoration-none"
+                  href={place.website}
+                  target="_blank"
+                >
+                  {place.website}
+                </a>
+              </p>
             </div>
-            <Link to={url} className="heart p-2">
-              <p className="">Add info</p>
+            <Link to={url} className="add-info">
+              Add info
             </Link>
             <a
               href="#"

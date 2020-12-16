@@ -1,13 +1,7 @@
 import React from "react";
 import "./Searchbar.css";
-import Checkboxes from "../Filters/Checkboxes";
 
-const Searchbar = ({
-  query,
-  handleInputChange,
-  infos,
-  handleCheckboxChange,
-}) => {
+const Searchbar = ({ query, handleInputChange }) => {
   return (
     <div className="input-group mb-4 ">
       <input

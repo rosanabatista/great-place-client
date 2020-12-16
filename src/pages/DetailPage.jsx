@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import Detail from "../components/Place/Detail";
 import { post, get } from "../services/api";
+import LoadingComponent from "../components/Loading/index";
 
 export default class DetailPage extends Component {
   state = {
     place: { infos: {}, comments: [] },
     body: "",
     picture: null,
+    loading: true,
   };
 
   componentDidMount = () => {
@@ -14,6 +16,7 @@ export default class DetailPage extends Component {
     get(`/places/${this.props.computedMatch.params.id}`).then((result) => {
       this.setState({
         place: result.data,
+        loading: false,
       });
     });
   };
@@ -23,6 +26,7 @@ export default class DetailPage extends Component {
     let formBody = new window.FormData();
     formBody.append("picture", this.state.picture);
     formBody.append("body", this.state.body);
+    this.setState({ loading: true });
 
     post(`/places/${this.state.place.place_id}/new-comment`, formBody).then(
       (result) => {
@@ -35,6 +39,7 @@ export default class DetailPage extends Component {
           place: place,
           body: "",
           picture: null,
+          loading: false,
         });
       }
     );
@@ -67,6 +72,9 @@ export default class DetailPage extends Component {
   };
 
   render() {
+    if (this.state.loading) {
+      return <LoadingComponent />;
+    }
     const newComment = { body: this.state.body, picture: this.state.picture };
     return (
       <div>

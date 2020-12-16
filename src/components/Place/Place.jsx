@@ -7,9 +7,11 @@ const Place = (props) => {
   const url = `/detail/${place.place_id}`;
   const favIcon = place.isFavorite ? "fas fa-heart" : "far fa-heart";
   return (
-    <div className="row mb-5">
-      <div className="text-center place-click">
-        <img src={place.picture} />
+    <div className="row mb-5 text-center place-click">
+      <div className="col-4">
+        <img className="w-100" src={place.picture} alt={place.name} />
+      </div>
+      <div className="col-8">
         <h3>
           <Link to={url} className="text-decoration-none place">
             {place.name}

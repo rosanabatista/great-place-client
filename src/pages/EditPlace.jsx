@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import Checkboxes from "../components/Filters/Checkboxes";
 import { post, get } from "../services/api";
+import LoadingComponent from "../components/Loading/index";
 
 export default class EditPlace extends Component {
   state = {
     place: {},
     infos: {},
+    loading: true,
   };
 
   componentDidMount = () => {
@@ -13,6 +15,7 @@ export default class EditPlace extends Component {
       this.setState({
         place: result.data,
         infos: result.data.infos,
+        loading: false,
       });
     });
   };
@@ -29,16 +32,22 @@ export default class EditPlace extends Component {
   };
 
   handleFormSubmit = (event) => {
+    this.setState({ loading: true });
     event.preventDefault();
     post(
       `/places/${this.props.computedMatch.params.id}`,
       this.state.infos
     ).then((result) => {
+      this.setState({ loading: false });
+
       this.props.history.push(`/detail/${this.props.computedMatch.params.id}`);
     });
   };
 
   render() {
+    if (this.state.loading) {
+      return <LoadingComponent />;
+    }
     return (
       <div>
         <div>
@@ -52,7 +61,7 @@ export default class EditPlace extends Component {
             infos={this.state.infos}
             handleChange={this.handleCheckboxChange}
             containerClasses="row mb-3 mt-5 checkboxes"
-            itemClasses="col-4 mb-2"
+            itemClasses="col-lg-4 col-sm-12 mb-2"
           />
           <div className="text-center mt-2">
             <button type="submit" className="button button__submit">

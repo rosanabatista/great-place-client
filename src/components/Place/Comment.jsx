@@ -7,7 +7,9 @@ const Comment = (props) => {
     <div className="card mb-3">
       <div className="row g-0">
         <div className="col-md-4">
-          {comment.picture && <img className="w-100" src={comment.picture} />}
+          {comment.picture && (
+            <img className="w-100" src={comment.picture} alt="comment" />
+          )}
         </div>
         <div className="col-md-8">
           <div className="card-body">

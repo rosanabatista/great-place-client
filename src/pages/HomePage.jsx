@@ -16,7 +16,7 @@ function HomePage() {
           />
         </div>
         <h4 className="w-50 text-center m-auto ">
-          A great place is where everyone is welcomed.
+          A great place is where everyone feels welcomed.
         </h4>
       </header>
       <section className="hero mt-4">
@@ -35,8 +35,8 @@ function HomePage() {
               </span>
               <h3>Filter</h3>
               <p>
-                Filter by accessibility. Are you going with kids? We have your
-                back!
+                Filter by accessibility. Are you going with kids? We also have
+                your back!
               </p>
             </div>
             <div className="col-sm-4 web-box text-center mt-3 mb-3">

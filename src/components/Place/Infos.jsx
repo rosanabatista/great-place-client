@@ -9,7 +9,7 @@ const Infos = (props) => {
       {available.map((key) => {
         const option = info_options.filter((item) => item.name === key);
         return (
-          <div className="col-4 mt-2 mb-2" key={key}>
+          <div className="col-lg-4 col-sm-12 mt-2 mb-2" key={key}>
             <i className={option[0].icon}></i>
             <span className="ms-2">{option[0].label}</span>
           </div>

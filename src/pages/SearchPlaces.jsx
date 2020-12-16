@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import Checkboxes from "../components/Filters/Checkboxes";
-import Filters from "../components/Filters/Filters";
 import Place from "../components/Place/Place";
 import Searchbar from "../components/Searchbar/Searchbar";
 import { get, post } from "../services/api";
 import "../App.css";
+import NoPlaces from "../components/Place/NoPlaces";
+import LoadingComponent from "../components/Loading/index";
 
 export default class SearchPlaces extends Component {
   state = {
@@ -13,6 +14,7 @@ export default class SearchPlaces extends Component {
     lat: null,
     lng: null,
     infos: {},
+    loading: false,
   };
 
   componentDidMount = () => {
@@ -51,13 +53,14 @@ export default class SearchPlaces extends Component {
     const filters = Object.keys(this.state.infos)
       .filter((key) => this.state.infos[key] === true)
       .join(",");
-
+    this.setState({ loading: true });
     if (this.state.lat && this.state.lng) {
       get(
         `/places/search?search=${this.state.query}&latitude=${this.state.lat}&longitude=${this.state.lng}&filters=${filters}`
       ).then((results) => {
         this.setState({
           places: results.data,
+          loading: false,
         });
       });
     } else {
@@ -65,6 +68,7 @@ export default class SearchPlaces extends Component {
         (results) => {
           this.setState({
             places: results.data,
+            loading: false,
           });
         }
       );
@@ -87,6 +91,10 @@ export default class SearchPlaces extends Component {
   };
 
   render() {
+    if (this.state.loading) {
+      return <LoadingComponent />;
+    }
+
     return (
       <div className="search-page">
         <div className="container">
@@ -115,6 +123,7 @@ export default class SearchPlaces extends Component {
               </form>
             </div>
             <div className="col-lg-8">
+              {this.state.places.length === 0 && <NoPlaces />}
               {this.state.places.map((place) => {
                 return (
                   <Place
