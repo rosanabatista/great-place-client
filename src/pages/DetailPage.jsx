@@ -12,7 +12,6 @@ export default class DetailPage extends Component {
   };
 
   componentDidMount = () => {
-    console.log(this.props);
     get(`/places/${this.props.computedMatch.params.id}`).then((result) => {
       this.setState({
         place: result.data,
@@ -61,7 +60,6 @@ export default class DetailPage extends Component {
 
   handleFavoriteClick = (event) => {
     event.preventDefault();
-    console.log(event.target.dataset.id);
     post(`/favorites/${event.target.closest("a").dataset.id}`).then(
       (result) => {
         const place = this.state.place;

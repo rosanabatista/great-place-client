@@ -19,16 +19,13 @@ export default class SearchPlaces extends Component {
 
   componentDidMount = () => {
     if ("geolocation" in navigator) {
-      console.log("geo is available");
       navigator.geolocation.getCurrentPosition((position) => {
-        console.log(position.coords.latitude, position.coords.longitude);
         this.setState({
           lat: position.coords.latitude,
           lng: position.coords.longitude,
         });
       });
     } else {
-      console.log("geo is not available");
     }
   };
 

@@ -29,7 +29,6 @@ class App extends React.Component {
     }
     getLoggedIn(accessToken).then((res) => {
       if (!res.status) {
-        console.log("RES IN CASE OF FAILURE", res);
         // deal with failed backend call
         return this.setState({
           isLoading: false,
@@ -58,7 +57,6 @@ class App extends React.Component {
         logout(accessToken).then((res) => {
           if (!res.status) {
             // deal with error here
-            console.log("SOMETHING HAPPENED", res);
           }
 
           localStorage.removeItem("accessToken");

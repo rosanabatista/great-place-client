@@ -8,12 +8,12 @@ function HomePage() {
     <div className="App">
       <header className="App-header">
         <div className="mt-3 mb-3 mainLogo text-center">
-          <img src={mainLogo} alt="logo" className="d-none d-lg-block w-100" />
           <img
-            src={mainLogo2}
+            src={mainLogo}
             alt="logo"
-            className="d-lg-none w-100 ps-3 pe-3"
+            className="d-none d-lg-block w-75 m-auto"
           />
+          <img src={mainLogo2} alt="logo" className="d-lg-none w-75" />
         </div>
         <h4 className="w-50 text-center m-auto ">
           A great place is where everyone feels welcomed.

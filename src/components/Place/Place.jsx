@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Place = (props) => {
   const { place } = props;
   const defaultImg =
     "https://upload.wikimedia.org/wikipedia/commons/b/be/KeizersgrachtReguliersgrachtAmsterdam.jpg";
-  const [imgURL, setImageURL] = useState(place.picture);
 
   const url = `/detail/${place.place_id}`;
   const favIcon = place.isFavorite ? "fas fa-heart" : "far fa-heart";
@@ -14,10 +13,10 @@ const Place = (props) => {
       <div className="col-lg-4 col-sm-2">
         <img
           className="w-100 mb-3"
-          src={imgURL}
+          src={place.picture}
           alt={place.name}
-          onError={() => {
-            setImageURL(defaultImg);
+          onError={(event) => {
+            event.target.setAttribute("src", defaultImg);
           }}
         />
       </div>
