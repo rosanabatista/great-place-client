@@ -13,6 +13,9 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+#root {
+  min-height: calc(100vh - 24px);
+}
 
 .container {
   max-width: 1020px !important;
@@ -154,4 +157,8 @@ body {
   padding: 20px;
   border-radius: 1rem;
   margin-top: 10px;
+}
+
+.footer {
+  width: 100%;
 }
