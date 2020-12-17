@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 import Infos from "./Infos";
@@ -6,15 +6,24 @@ import { Link } from "react-router-dom";
 
 const Detail = (props) => {
   const { place } = props;
+  const [imgURL, setImageURL] = useState(place.picture);
   const url = `/edit/${place.place_id}`;
   const favIcon = place.isFavorite ? "fas fa-heart" : "far fa-heart";
-  const imgURL = `${process.env.REACT_APP_SERVER_URL}/places/photos/${place.photo}`;
   return (
     <div className="container">
       <section>
         <div className="row mb-5 text-center">
           <div className="col-12">
-            <img src={place.picture} alt={place.name} />
+            <img
+              src={imgURL}
+              alt={place.name}
+              className="w-100 mb-3"
+              onError={() => {
+                setImageURL(
+                  "https://upload.wikimedia.org/wikipedia/commons/b/be/KeizersgrachtReguliersgrachtAmsterdam.jpg"
+                );
+              }}
+            />
 
             <h2>{place.name}</h2>
             <div className="col-12 pt-1">

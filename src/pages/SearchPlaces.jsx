@@ -97,7 +97,7 @@ export default class SearchPlaces extends Component {
 
     return (
       <div className="search-page">
-        <div className="container">
+        <div className="container mt-3">
           <div className="row align-items-center h-100">
             <form
               onSubmit={this.handleFormSubmit}
@@ -112,14 +112,39 @@ export default class SearchPlaces extends Component {
             </form>
           </div>
           <div className="row">
-            <h4>Select the filters:</h4>
-            <div className="col-lg-3 sidebar">
+            <div className="col-lg-3">
               <form onSubmit={this.handleFormSubmit}>
-                <Checkboxes
-                  infos={this.state.infos}
-                  handleChange={this.handleCheckboxChange}
-                />
-                <button className="button__submit">Search</button>
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item sidebar">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button
+                        class="accordion-button acc-btn collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        Select the filters:
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseOne"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingOne"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <Checkboxes
+                        infos={this.state.infos}
+                        handleChange={this.handleCheckboxChange}
+                        containerClasses="accordion-body"
+                      />
+                      <div className="text-center">
+                        <button className="button__submit">Search</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </form>
             </div>
             <div className="col-lg-8">

@@ -57,11 +57,17 @@ body {
 
 /* SEARCH */
 .sidebar {
-  background-color: #457b9d;
-  color: #eef5fa;
-  padding: 20px;
+  border: 1px solid #457b9d;
   border-radius: 5px;
-  margin-left: 0.75rem;
+}
+
+.acc-btn {
+  background-color: #457b9d !important;
+  color: #e3f2ff !important;
+}
+
+.acc-btn::after {
+  background-image: url("./arrow.svg") !important;
 }
 
 .place-click {
