@@ -14,7 +14,11 @@ const info_options = [
     name: "wheelchair_table",
     label: "Table height suitable to wheelchairs",
   },
-  { icon: "fas fa-braille", name: "braille_menu", label: "Braille menu" },
+  {
+    icon: "fas fa-braille",
+    name: "braille_menu",
+    label: "Braille menu/Audio menu",
+  },
   {
     icon: "fas fa-blind",
     name: "braille_signs",
